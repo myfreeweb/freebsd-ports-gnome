@@ -1,5 +1,7 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
+#
+# Please update update atril-lite also
 
 PORTNAME=	atril
 PORTVERSION=	1.18.0
