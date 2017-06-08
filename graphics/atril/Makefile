@@ -49,59 +49,44 @@ USE_MATE+=	desktop
 
 GLIB_SCHEMAS=	org.mate.Atril.gschema.xml
 
-OPTIONS_DEFINE=	CAJA COMICS DJVU DVI EPUB KEYRING T1LIB XPS
-OPTIONS_DEFAULT=CAJA COMICS DJVU EPUB KEYRING XPS
-DVI_DESC=	DVI viewer support
-T1LIB_DESC=	T1LIB for TYPE1 fonts to DVI (Enables DVI)
-CAJA_DESC=	Caja plugin
-KEYRING_DESC=	Keyring support
-COMICS_DESC=	Comic book archives support
-DJVU_DESC=	DJVU support
-XPS_DESC=	XPS support
-EPUB_DESC=	Epub support
+OPTIONS_DEFINE=	CAJA COMICS DBUS DJVU DVI EPUB KEYRING T1LIB XPS
+OPTIONS_DEFAULT=CAJA COMICS DBUS DJVU EPUB KEYRING XPS
 
 OPTIONS_SUB=	yes
 
+CAJA_DESC=		Caja plugin
 CAJA_CONFIGURE_ENABLE=	caja
 CAJA_USE=		MATE=caja
+
+DJVU_DESC=		DJVU support
 DJVU_LIB_DEPENDS=	libdjvulibre.so:graphics/djvulibre
 DJVU_CONFIGURE_ENABLE=	djvu
+
+COMICS_DESC=			Comic book archives support
 COMICS_CONFIGURE_ENABLE=	comics
+
+DBUS_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
+DBUS_CONFIGURE_ENABLE=	dbus
+
+KEYRING_DESC=		Keyring support
 KEYRING_CONFIGURE_WITH=	keyring
 KEYRING_LIB_DEPENDS=	libsecret-1.so:security/libsecret
+
+XPS_DESC=		XPS support
 XPS_CONFIGURE_ENABLE=	xps
 XPS_LIB_DEPENDS=	libgxps.so:graphics/libgxps
+
+EPUB_DESC=		Epub support
 EPUB_CONFIGURE_ENABLE=	epub
-#EPUB_LIB_DEPENDS=	libwebkitgtk-1.0.so:www/webkit-gtk2
+EPUB_LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3
 
-.include <bsd.port.options.mk>
+DVI_DESC=		DVI viewer support
+DVI_USE=		tex=base
+DVI_CONFIGURE_ENABLE=	dvi
 
-.if ${PORT_OPTIONS:MEPUB}
-LIB_DEPENDS+=	libwebkit2gtk-4.0.so:www/webkit2-gtk3
-.endif
-
-.if ${SLAVEPORT} == lite
-CONFIGURE_ARGS+=--disable-dbus
-.else
-CONFIGURE_ARGS+=--enable-dbus
-LIB_DEPENDS+=	libdbus-glib-1.so:devel/dbus-glib
-.endif
-
-.if ${PORT_OPTIONS:MDVI} || ${PORT_OPTIONS:MT1LIB}
-USE_TEX=	base
-CONFIGURE_ARGS+=--enable-dvi
-PLIST_SUB+=	DVI=""
-
-. if ${PORT_OPTIONS:MT1LIB}
-LIB_DEPENDS+=	libt1.so:devel/t1lib
-CONFIGURE_ARGS+=--enable-t1lib
-.else
-CONFIGURE_ARGS+=--disable-t1lib
-. endif
-
-.else
-CONFIGURE_ARGS+=--disable-dvi
-PLIST_SUB+=	DVI="@comment "
-.endif
+T1LIB_DESC=		T1LIB for TYPE1 fonts to DVI (Enables DVI)
+T1LIB_LIB_DEPENDS=	libt1.so:devel/t1lib
+T1LIB_CONFIGURE_ENABLE=	t1lib
+T1LIB_IMPLIES=		DVI
 
 .include <bsd.port.mk>
