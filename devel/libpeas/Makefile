@@ -37,14 +37,14 @@ CONFIGURE_ARGS+=--disable-glade-catalog
 PLIST=          ${.CURDIR}/pkg-plist
 
 .if ${LIBPEAS_SLAVE} == python2
-USES+=		python:2
+USES+=		python:-2.7
 USE_GNOME+=	pygobject3
 .else
 CONFIGURE_ARGS+=	--disable-python2
 .endif
 
 .if ${LIBPEAS_SLAVE} == python3
-USES+=		python:3
+USES+=		python:3.3+
 USE_GNOME+=	py3gobject3
 .else
 CONFIGURE_ARGS+=	--disable-python3

@@ -218,7 +218,6 @@
     SUBDIR += mysql57-server
     SUBDIR += mysql80-client
     SUBDIR += mysql80-server
-    SUBDIR += mysqlwsrep56-server
     SUBDIR += mysqlbackup
     SUBDIR += mysqlbigram
     SUBDIR += mysqldump-secure
@@ -229,6 +228,7 @@
     SUBDIR += mysqlsniffer
     SUBDIR += mysqltcl
     SUBDIR += mysqltuner
+    SUBDIR += mysqlwsrep56-server
     SUBDIR += mytop
     SUBDIR += nagios-check_mongodb
     SUBDIR += nagios-check_postgres_replication
@@ -242,6 +242,7 @@
     SUBDIR += openark-kit
     SUBDIR += opendbx
     SUBDIR += opentsdb
+    SUBDIR += ora2pg
     SUBDIR += oracle8-client
     SUBDIR += p5-Amazon-SimpleDB
     SUBDIR += p5-Amon2-DBI
@@ -918,8 +919,8 @@
     SUBDIR += rubygem-em-redis-unified
     SUBDIR += rubygem-familia
     SUBDIR += rubygem-globalid
-    SUBDIR += rubygem-globalid-rails50
     SUBDIR += rubygem-globalid-rails5
+    SUBDIR += rubygem-globalid-rails50
     SUBDIR += rubygem-her
     SUBDIR += rubygem-hiredis
     SUBDIR += rubygem-jdbc-mysql
