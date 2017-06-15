@@ -28,6 +28,7 @@ lib/eom/plugins/libreload.so
 lib/eom/plugins/libstatusbar-date.so
 lib/eom/plugins/reload.plugin
 lib/eom/plugins/statusbar-date.plugin
+lib/girepository-1.0/Eom-1.0.typelib
 libdata/pkgconfig/eom.pc
 man/man1/eom.1.gz
 share/appdata/eom.appdata.xml
@@ -90,6 +91,7 @@ share/applications/eom.desktop
 %%PORTDOCS%%%%DOCSDIR%%/style.css
 %%PORTDOCS%%%%DOCSDIR%%/up-insensitive.png
 %%PORTDOCS%%%%DOCSDIR%%/up.png
+%%DATADIR%%/eom-3.18.css
 %%DATADIR%%/eom-image-properties-dialog.ui
 %%DATADIR%%/eom-multiple-save-as-dialog.ui
 %%DATADIR%%/eom-preferences-dialog.ui
@@ -113,6 +115,7 @@ share/applications/eom.desktop
 %%DATADIR%%/icons/hicolor/scalable/actions/eom-plugin.svg
 %%DATADIR%%/icons/hicolor/scalable/actions/slideshow-play.svg
 %%DATADIR%%/pixmaps/thumbnail-frame.png
+share/gir-1.0/Eom-1.0.gir
 share/help/C/eom/figures/eom_save_as_window.png
 share/help/C/eom/figures/eom_start_window.png
 share/help/C/eom/figures/eom_toolbar_editor_window.png
