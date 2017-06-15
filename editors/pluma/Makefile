@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pluma
-PORTVERSION=	1.18.1
+PORTVERSION=	1.18.2
 CATEGORIES=	editors mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -10,29 +10,24 @@ DIST_SUBDIR=	mate
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Small but powerful text editor for MATE Desktop Environment
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	itstool:textproc/itstool \
 		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes
 LIB_DEPENDS=	libenchant.so:textproc/enchant \
-		libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2 \
-		libsoup-2.4.so:devel/libsoup \
 		libpeas-gtk-1.0.so:devel/libpeas
-
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes
 
 PORTSCOUT=	limitw:1,even
 
-USES=		desktop-file-utils gettext gmake libtool localbase \
-		pathfix pkgconfig shebangfix tar:xz
-USE_MATE=	desktop
+USES=		desktop-file-utils gmake libtool localbase \
+		pathfix pkgconfig python:3.3+ shebangfix tar:xz
 USE_XORG=	ice sm x11
-USE_GNOME=	cairo gdkpixbuf2 gvfs gtk30 gtksourceview3 intlhack libxml2
+USE_GNOME=	cairo gdkpixbuf2 gnomeprefix gtk30 gtksourceview3 \
+		gvfs intltool introspection libxml2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-gtk-doc \
-		--with-gtk=3.0 \
-		--disable-python \
-		--with-html-dir=${PREFIX}/share/doc
 INSTALL_TARGET=	install-strip
 
 SHEBANG_FILES=	${WRKSRC}/plugins/externaltools/data/search-recursive.tool.in \
