@@ -10,23 +10,23 @@ DIST_SUBDIR=	mate
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Additional UI API for MATE
 
-BUILD_DEPENDS=	itstool:textproc/itstool
-LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
-		libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2
+LICENSE=	GPLv2 GFDL LGPL21
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
+LICENSE_FILE_GFDL=	${WRKSRC}/COPYING-DOCS
+LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LIB
+
+LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification
 
 PORTSCOUT=	limitw:1,even
 
-USES=		bison gettext gmake libtool localbase pathfix \
+USES=		gettext gmake libtool localbase pathfix \
 		pkgconfig python shebangfix tar:xz
 USE_XORG=	x11 xrandr
-USE_GNOME=	cairo dconf gdkpixbuf2 gtk30 intlhack introspection:build
-#SHEBANG_FILES=	tools/mpaste
+USE_GNOME=	cairo dconf gdkpixbuf2 gnomeprefix gtk30 \
+		intltool introspection:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-gtk-doc \
-		--with-gtk=3.0 \
-		--with-html-dir=${PREFIX}/share/doc
 INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.mate.accessibility-keyboard.gschema.xml \
@@ -47,11 +47,5 @@ GLIB_SCHEMAS=	org.mate.accessibility-keyboard.gschema.xml \
 		org.mate.thumbnailers.gschema.xml \
 		org.mate.typing-break.gschema.xml \
 		org.mate.debug.gschema.xml
-
-OPTIONS_SUB=			yes
-#OPTIONS_DEFINE=			PASTE
-#OPTIONS_DEFAULT=		PASTE
-#PASTE_CONFIGURE_ENABLE=		mpaste
-#PASTE_DESC=			Build the mate paste tool
 
 .include <bsd.port.mk>
