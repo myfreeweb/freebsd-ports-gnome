@@ -9,33 +9,34 @@ DIST_SUBDIR=	mate
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Applets components for the MATE Desktop Environment
 
+LICENSE=	GPLv2 GFDL
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
+LICENSE_FILE_GFDL=	${WRKSRC}/COPYING-DOCS
+
 BUILD_DEPENDS=	itstool:textproc/itstool
 LIB_DEPENDS=	libgtop-2.0.so:devel/libgtop \
-		libxklavier.so:x11/libxklavier \
 		libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib \
-		libpolkit-gobject-1.so:sysutils/polkit \
-		libhal.so:sysutils/hal \
 		libupower-glib.so:sysutils/upower \
-		libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2 \
+		libgucharmap_2_90.so:deskutils/gucharmap \
 		libnotify.so:devel/libnotify
-RUN_DEPENDS=	gucharmap:deskutils/gucharmap
 
 PORTSCOUT=	limitw:1,even
 
-USES=		autoreconf:build gettext gmake libtool localbase pathfix \
-		pkgconfig python shebangfix tar:xz
-USE_MATE=	desktop icontheme libmateweather panel polkit settingsdaemon
+#USES=		autoreconf:build gettext gmake libtool localbase pathfix \
+#		pkgconfig python shebangfix tar:xz
+USES=		gmake libtool localbase pkgconfig python:2.7 shebangfix tar:xz
+#USE_MATE=	desktop icontheme libmateweather panel polkit settingsdaemon
+USE_MATE=	libmateweather panel
 USE_XORG=	ice sm x11
-USE_GNOME=	cairo gdkpixbuf2 gtk30 gtksourceview3 introspection:build \
-		libwnck3 libxml2 libxslt pygobject pygobject3 intlhack
+#USE_GNOME=	cairo gdkpixbuf2 gtk30 gtksourceview3 introspection:build \
+#		libwnck3 libxml2 libxslt pygobject pygobject3 intlhack
+USE_GNOME=	cairo gtk30 gtksourceview3 intltool libwnck3 libxml2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ENV=	OS_SYS="/usr/include"
-CONFIGURE_ARGS=	--with-gtk=3.0
-LDFLAGS+=	-lpthread
 INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.mate.panel.applet.charpick.gschema.xml \
