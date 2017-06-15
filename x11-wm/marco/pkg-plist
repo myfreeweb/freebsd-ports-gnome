@@ -1,5 +1,6 @@
 bin/marco
 bin/marco-message
+bin/marco-theme-viewer
 bin/marco-window-demo
 include/marco-1/marco-private/boxes.h
 include/marco-1/marco-private/common.h
@@ -72,6 +73,7 @@ share/locale/kk/LC_MESSAGES/marco.mo
 share/locale/kn/LC_MESSAGES/marco.mo
 share/locale/ko/LC_MESSAGES/marco.mo
 share/locale/ku/LC_MESSAGES/marco.mo
+share/locale/ku_IQ/LC_MESSAGES/marco.mo
 share/locale/ky/LC_MESSAGES/marco.mo
 share/locale/la/LC_MESSAGES/marco.mo
 share/locale/lt/LC_MESSAGES/marco.mo
