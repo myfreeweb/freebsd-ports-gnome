@@ -13,9 +13,8 @@ COMMENT=	Collection of themes and icons for MATE
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-# not sure about the engines yet ... probably only needed for gtk+2
-#RUN_DEPENDS=	gtk-engines2>=2.15.0:x11-themes/gtk-engines2 \
-#		gtk-murrine-engine>=0.98:x11-themes/gtk-murrine-engine
+RUN_DEPENDS=	gtk-engines2>=2.15.0:x11-themes/gtk-engines2 \
+		gtk-murrine-engine>=0.98:x11-themes/gtk-murrine-engine
 
 PORTSCOUT=	limit:^${PORTVERSION:R:S|.|\.|}\.*$$
 
