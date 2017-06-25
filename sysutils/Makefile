@@ -247,6 +247,7 @@
     SUBDIR += dsbbatmon
     SUBDIR += dsbdriverd
     SUBDIR += dsbmc
+    SUBDIR += dsbmc-cli
     SUBDIR += dsbmd
     SUBDIR += dsbwrtsysctl
     SUBDIR += dt
@@ -280,6 +281,7 @@
     SUBDIR += etcupdate
     SUBDIR += eventlog
     SUBDIR += evtviewer
+    SUBDIR += exa
     SUBDIR += exfat-utils
     SUBDIR += extipl
     SUBDIR += ezjail
@@ -311,6 +313,7 @@
     SUBDIR += flexbackup
     SUBDIR += flock
     SUBDIR += flog
+    SUBIDR += flowgger
     SUBDIR += fluent-bit
     SUBDIR += flyback
     SUBDIR += fonteditfs
@@ -617,6 +620,7 @@
     SUBDIR += mksunbootcd
     SUBDIR += mmc-utils
     SUBDIR += mnrpes
+    SUBDIR += modman
     SUBDIR += modules
     SUBDIR += mog
     SUBDIR += monit
@@ -662,12 +666,12 @@
     SUBDIR += namefix
     SUBDIR += nbosd
     SUBDIR += ncdu
+    SUBDIR += ndmpd
     SUBDIR += nepomuk-core
     SUBDIR += nepomuk-widgets
     SUBDIR += nfcutils
     SUBDIR += nfsping
     SUBDIR += nitrogen
-    SUBDIR += ndmpd
     SUBDIR += no-login
     SUBDIR += node_exporter
     SUBDIR += nomad
@@ -911,7 +915,9 @@
     SUBDIR += qlogtools
     SUBDIR += qpxtool
     SUBDIR += qsynergy
+    SUBDIR += qt5-qtdiag
     SUBDIR += qt5-qtpaths
+    SUBDIR += qt5-qtplugininfo
     SUBDIR += qtpass
     SUBDIR += quicksynergy
     SUBDIR += qzeitgeist
@@ -941,6 +947,7 @@
     SUBDIR += respond
     SUBDIR += restic
     SUBDIR += retail
+    SUBDIR += rex
     SUBDIR += rfstool
     SUBDIR += rhc
     SUBDIR += riak-cs
@@ -1166,6 +1173,7 @@
     SUBDIR += u-boot-cubieboard2
     SUBDIR += u-boot-cubox-hummingboard
     SUBDIR += u-boot-duovero
+    SUBDIR += u-boot-imx-serial-loader
     SUBDIR += u-boot-master
     SUBDIR += u-boot-olimex-a20-som-evb
     SUBDIR += u-boot-olinuxino-lime

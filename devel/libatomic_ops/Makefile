@@ -3,6 +3,7 @@
 
 PORTNAME=	libatomic_ops
 PORTVERSION=	7.4.6
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -14,11 +15,10 @@ LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
-USES=autoreconf libtool pathfix
-GNU_CONFIGURE=yes
+USES=		autoreconf libtool pathfix
+GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	ivmai
-GH_PROJECT=	libatomic_ops
 
 OPTIONS_DEFINE=	DOCS
 
