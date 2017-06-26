@@ -32,7 +32,8 @@ USE_MATE=	libmateweather panel
 USE_XORG=	ice sm x11
 #USE_GNOME=	cairo gdkpixbuf2 gtk30 gtksourceview3 introspection:build \
 #		libwnck3 libxml2 libxslt pygobject pygobject3 intlhack
-USE_GNOME=	cairo gtk30 gtksourceview3 intltool libwnck3 libxml2
+USE_GNOME=	cairo gtk30 gtksourceview3 intltool libwnck3 libxml2 \
+		pygobject3
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
