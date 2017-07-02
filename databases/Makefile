@@ -648,6 +648,7 @@
     SUBDIR += phpminiadmin
     SUBDIR += phpmyadmin
     SUBDIR += phppgadmin
+    SUBDIR += pldebugger
     SUBDIR += postgis-jdbc
     SUBDIR += postgis20
     SUBDIR += postgis21
@@ -993,6 +994,7 @@
     SUBDIR += tdb
     SUBDIR += tdbc
     SUBDIR += tile38
+    SUBDIR += timescaledb
     SUBDIR += tinycdb
     SUBDIR += tokyocabinet
     SUBDIR += tokyotyrant
