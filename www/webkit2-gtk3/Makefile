@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	webkit
-PORTVERSION=	2.16.5
+PORTVERSION=	2.16.6
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://webkitgtk.org/releases/
 PKGNAMESUFFIX=	2-gtk3

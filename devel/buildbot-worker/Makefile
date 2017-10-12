@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	buildbot-worker
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.10
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 

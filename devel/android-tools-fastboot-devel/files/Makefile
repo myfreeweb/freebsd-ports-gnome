@@ -18,7 +18,6 @@ SRCS+=	util.cpp
 
 .PATH: ${EXTRADIR}
 SRCS+=	usb_freebsd.cpp
-SRCS+=	util_freebsd.cpp
 
 # required by fastboot
 .PATH: ${.CURDIR}/../adb
@@ -102,7 +101,7 @@ SRCS+=	zip_archive.cc
 
 REVISION?=	$$(${GIT} rev-parse --short=12 HEAD 2>/dev/null || echo unknown)
 
-CPPFLAGS+=	-DFASTBOOT_VERSION="\"0.0.0-${REVISION}-android\""
+CPPFLAGS+=	-DFASTBOOT_VERSION="\"26.0.0 rc1-${REVISION}-android\""
 CPPFLAGS+=	-Doff64_t=off_t
 CPPFLAGS+=	-Dftruncate64=ftruncate
 CPPFLAGS+=	-Dlseek64=lseek

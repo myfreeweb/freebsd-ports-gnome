@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zabbix32
-PORTVERSION=	3.2.6
+PORTVERSION=	3.2.7
 PORTREVISION?=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/zabbix/ZABBIX%20Latest%20Stable/${PORTVERSION}
@@ -56,7 +56,6 @@ CONFIGURE_ARGS+=	--enable-${ZABBIX_BUILD} \
 
 .if ${ZABBIX_BUILD} != "agent"
 LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
-USES+=		execinfo
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 

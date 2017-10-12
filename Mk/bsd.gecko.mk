@@ -97,7 +97,6 @@ BUNDLE_LIBS=	yes
 
 .if ${MOZILLA_VER:R:R} >= 49
 USES+=		compiler:c++14-lang
-FAVORITE_COMPILER=	${COMPILER_TYPE} # c++14-lib
 CPPFLAGS+=	-D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH_TR1 \
 			-D_DECLARE_C99_LDBL_MATH # XXX ports/193528
 .else
@@ -253,6 +252,7 @@ MOZ_OPTIONS+=	\
 		--enable-chrome-format=${MOZ_CHROME} \
 		--enable-default-toolkit=${MOZ_TOOLKIT} \
 		--enable-update-channel=${MOZ_CHANNEL} \
+		--disable-updater \
 		--enable-pie \
 		--with-pthreads
 # Configure options for install
@@ -389,10 +389,7 @@ post-patch-SNDIO-on:
 .endif
 
 .if ${PORT_OPTIONS:MRUST}
-BUILD_DEPENDS+=	rust>=1.15.1:${RUST_PORT}
-. if ${MOZILLA_VER:R:R} >= 51
-BUILD_DEPENDS+=	cargo>=0.16.0:devel/cargo
-. endif
+BUILD_DEPENDS+=	rust>=1.19.0:${RUST_PORT}
 RUST_PORT?=		lang/rust
 MOZ_OPTIONS+=	--enable-rust
 .else
@@ -476,7 +473,6 @@ CFLAGS+=	-B${LOCALBASE}/bin
 LDFLAGS+=	-B${LOCALBASE}/bin
 . endif
 .elif ${ARCH:Mpowerpc*}
-USES:=		compiler:gcc-c++11-lib ${USES:Ncompiler*c++11*}
 . if ${ARCH} == "powerpc64"
 MOZ_EXPORT+=	UNAME_m="${ARCH}"
 CFLAGS+=	-mminimal-toc

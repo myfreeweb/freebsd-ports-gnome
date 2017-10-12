@@ -3,7 +3,7 @@
 
 PORTNAME=	libclaw
 PORTVERSION=	1.7.4
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -12,6 +12,9 @@ COMMENT=	C++ Library Absolutely Wonderful
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	useless for anything apart from removed games/plee-the-bear
+EXPIRATION_DATE=2017-09-30
 
 LIB_DEPENDS=	libpng.so:graphics/png
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/bind.hpp:devel/boost-libs
