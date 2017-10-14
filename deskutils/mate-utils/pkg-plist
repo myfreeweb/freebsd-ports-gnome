@@ -645,4 +645,3 @@ share/mate-screenshot/mate-screenshot.ui
 %%DATADIR%%/logview-filter.ui
 %%DATADIR%%/logview-toolbar.xml
 share/pixmaps/mate-search-tool/thumbnail_frame.png
-
